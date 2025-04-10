@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spartanz 2K25</title>
 
   <!-- Fonts and Libraries -->
@@ -15,7 +15,6 @@
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
-      -webkit-tap-highlight-color: transparent;
     }
     body {
       margin: 0;
@@ -50,25 +49,25 @@
     header {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-        url('images/Hindusthan.jpg') center/cover no-repeat;
+        url('Hindusthan.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 1rem;
+      background-attachment: fixed;
     }
     .logo-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      width: 80%;
       gap: 1rem;
       margin-bottom: 1rem;
     }
     .header-logo {
       width: auto;
       height: auto;
-      max-width: 100%;
       filter: drop-shadow(0 0 15px rgba(255, 60, 60, 0.8));
       transition: transform 0.3s;
     }
@@ -77,7 +76,7 @@
     }
     header h1 {
       font-size: 4rem;
-      color: #ff3c3c;
+      color: #0000ff;
       text-shadow: 0 0 5px #ff3c3c, 0 0 10px #ff3c3c, 0 0 20px #ff3c3c;
       animation: glitch 2s infinite;
       font-family: 'Orbitron', sans-serif;
@@ -146,7 +145,6 @@
     .poster-image {
       display: block;
       max-width: 100%;
-      height: auto;
       margin: 2rem auto;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
@@ -183,7 +181,6 @@
       align-items: center;
       text-align: center;
       cursor: pointer;
-      touch-action: manipulation;
     }
     .event-card:hover {
       transform: scale(1.05);
@@ -213,7 +210,6 @@
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s;
-      touch-action: manipulation;
     }
     .event-details-btn:hover {
       background: #ff3c3c;
@@ -272,7 +268,6 @@
       font-family: 'Orbitron', sans-serif;
       transition: background 0.3s, transform 0.3s;
       box-shadow: 0 0 15px rgba(255, 60, 60, 0.5);
-      touch-action: manipulation;
     }
     .register-button:hover {
       background-color: #ff1a1a;
@@ -313,147 +308,52 @@
     .close:hover {
       color: #ff3c3c;
     }
-
     /* Responsive Styles */
     @media (max-width: 768px) {
-      header {
-        height: auto;
-        min-height: 100vh;
-        padding: 2rem 1rem;
-        background-attachment: scroll;
-      }
-      
       .header-logo {
         width: 180px;
       }
-      
       header h1 {
         font-size: 2.5rem;
       }
-      
-      header h3 {
-        font-size: 1rem;
-      }
-      
-      .countdown {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-      
-      .countdown-number {
-        font-size: 1.5rem;
-      }
-      
       nav {
         flex-wrap: wrap;
         gap: 0.5rem;
         padding: 0.5rem;
       }
-      
       nav a {
         font-size: 0.9rem;
         padding: 0.3rem 0.6rem;
       }
-      
       .section-title {
         font-size: 2rem;
       }
-      
       .event-subtitle {
         font-size: 1.5rem;
       }
-      
-      .event-grid {
-        grid-template-columns: 1fr;
+      .countdown {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
       }
-      
-      .event-card {
-        padding: 1rem;
+      .countdown-number {
+        font-size: 1.5rem;
       }
-      
-      .event-icon {
-        font-size: 2rem;
-      }
-      
-      .event-card h3 {
-        font-size: 1.2rem;
-      }
-      
       .modal-content {
         width: 95%;
-        margin: 20% auto;
+        margin: 10% auto;
         padding: 1.5rem;
       }
-      
-      .register-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-      }
     }
-    
     @media (max-width: 480px) {
-      body {
-        font-size: 14px;
-      }
-      
       .header-logo {
-        width: 150px;
+        width: 100px;
       }
-      
       header h1 {
         font-size: 2rem;
       }
-      
       .logo-container {
-        flex-direction: column;
         gap: 1rem;
-      }
-      
-      .section-title {
-        font-size: 1.8rem;
-      }
-      
-      .event-subtitle {
-        font-size: 1.3rem;
-      }
-      
-      /* Mobile navigation */
-      nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      nav a {
-        display: none;
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem;
-        border-bottom: 1px solid #333;
-      }
-      
-      nav a:first-child {
-        display: block;
-        width: auto;
-        border-bottom: none;
-      }
-      
-      nav.active a {
-        display: block;
-      }
-      
-      nav::before {
-        content: "☰";
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0.5rem;
-      }
-      
-      nav.active::before {
-        content: "✕";
       }
     }
   </style>
@@ -466,7 +366,6 @@
   <header>
     <div class="logo-container">
       <img src="finallogos.png" alt="Spartanz Main Logo" class="header-logo" data-aos="fade-down">
-      <img src="editedcertify.png" alt="Certification Logo" class="header-logo" data-aos="fade-down">
       <img src="Certificationlogo2.png" alt="HIT Logo" class="header-logo" data-aos="fade-down">
     </div>
     <h1 data-aos="fade-down">Spartanz 2K25</h1>
@@ -501,36 +400,31 @@
         <div class="event-card" data-aos="fade-up">
           <div class="event-icon"><i class="fas fa-microchip"></i></div>
           <h3>Paper Presentation</h3>
-          <p class="event-time">⏰ 10:00 AM - 12:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 11:00 AM - 12:00 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
         <div class="event-card" data-aos="fade-up" data-aos-delay="100">
           <div class="event-icon"><i class="fas fa-lightbulb"></i></div>
           <h3>Startup Ideas</h3>
-          <p class="event-time">⏰ 1:00 PM - 3:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 12:00 PM - 1:00 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
         <div class="event-card" data-aos="fade-up" data-aos-delay="200">
           <div class="event-icon"><i class="fas fa-bug"></i></div>
           <h3>Code Debugging</h3>
-          <p class="event-time">⏰ 11:00 AM - 1:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 11:00 AM - 12:00 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
         <div class="event-card" data-aos="fade-up" data-aos-delay="300">
           <div class="event-icon"><i class="fas fa-code"></i></div>
           <h3>Reverse Coding</h3>
-          <p class="event-time">⏰ 2:00 PM - 4:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 11:00 AM - 12:00 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
         <div class="event-card" data-aos="fade-up" data-aos-delay="400">
           <div class="event-icon"><i class="fas fa-question"></i></div>
           <h3>Technical Quiz</h3>
-          <p class="event-time">⏰ 4:00 PM - 6:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 11:30 AM - 12:30 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
       </div>
@@ -542,22 +436,19 @@
         <div class="event-card" data-aos="fade-up">
           <div class="event-icon"><i class="fas fa-video"></i></div>
           <h3>Short Film</h3>
-          <p class="event-time">⏰ 10:00 AM - 4:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 2:30 PM - 3:30 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
         <div class="event-card" data-aos="fade-up" data-aos-delay="100">
           <div class="event-icon"><i class="fas fa-camera"></i></div>
           <h3>Photography</h3>
-          <p class="event-time">⏰ All Day</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 2:30 PM - 3:30 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
         <div class="event-card" data-aos="fade-up" data-aos-delay="200">
           <div class="event-icon"><i class="fas fa-users"></i></div>
           <h3>Action Synchronization</h3>
-          <p class="event-time">⏰ 3:00 PM - 5:00 PM</p>
-          <p class="event-prize">🏆 Prize: ₹2,000</p>
+          <p class="event-time">⏰ 2:30 PM - 3:30 PM</p>
           <button class="event-details-btn">View Details</button>
         </div>
       </div>
@@ -583,7 +474,7 @@
       <a href="https://www.facebook.com/hect.hitech/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     </div>
     &copy; 2025 Spartanz 2K25 | Crafted with ⚔️ and ❤️ at Hindusthan Institute of Technology<br>
-    Contact: <a href="mailto:spartanz2k25cse@gmail.com">spartanz2k25cse@gmail.com</a> | Phone: +91 98765 43210
+    Contact: <a href="mailto:spartanz2k25cse@gmail.com">spartanz2k25cse@gmail.com</a> | Phone: +91 97515 35835
   </footer>
 
   <!-- Event Modal -->
@@ -688,8 +579,7 @@
     // Complete event data
     const eventData = {
       "Paper Presentation": {
-        time: "10:00 AM - 12:00 PM",
-        prize: "₹2,000",
+        time: "11:00 AM - 12:00 PM"
         description: "Present your research paper on emerging technologies. Maximum 2 participants per team. Duration: 10 minutes presentation + 5 minutes Q&A.",
         rules: [
           "Original work only - plagiarism will lead to disqualification",
@@ -698,8 +588,7 @@
         ]
       },
       "Startup Ideas": {
-        time: "1:00 PM - 3:00 PM",
-        prize: "₹2,000",
+        time: "12:00 PM - 1:00 PM"
         description: "Pitch your innovative startup idea to our panel of judges. Business model and feasibility will be key evaluation criteria.",
         rules: [
           "Maximum 3 members per team",
@@ -708,8 +597,7 @@
         ]
       },
       "Code Debugging": {
-        time: "11:00 AM - 1:00 PM",
-        prize: "₹2,000",
+        time: "11:00 AM - 12:00 PM"
         description: "Find and fix bugs in provided code snippets within the time limit. Individual competition testing your debugging skills.",
         rules: [
           "Individual participation only",
@@ -718,8 +606,7 @@
         ]
       },
       "Reverse Coding": {
-        time: "2:00 PM - 4:00 PM",
-        prize: "₹2,000",
+        time: "11:00 AM - 12:00 PM"
         description: "Given the output, write the code that produces it. Test your logical thinking and coding skills in this challenging event.",
         rules: [
           "Maximum 2 participants per team",
@@ -728,8 +615,7 @@
         ]
       },
       "Technical Quiz": {
-        time: "4:00 PM - 6:00 PM",
-        prize: "₹2,000",
+        time: "11:30 PM - 12:30 PM"
         description: "Test your technical knowledge in this fast-paced quiz competition covering various CS topics.",
         rules: [
           "Teams of 2-3 members",
@@ -738,8 +624,7 @@
         ]
       },
       "Short Film": {
-        time: "10:00 AM - 4:00 PM",
-        prize: "₹2,000",
+        time: "2:30 PM - 3:30 PM"
         description: "Submit your creative short films (5-10 minutes) on the given theme. Screening and judging during the event.",
         rules: [
           "Maximum 5 members per team",
@@ -748,8 +633,7 @@
         ]
       },
       "Photography": {
-        time: "All Day",
-        prize: "₹2,000",
+        time: "2:30 PM - 3:30 PM"
         description: "Capture the essence of the event through your lens. Submit your best shots by end of day.",
         rules: [
           "Individual participation",
@@ -758,8 +642,7 @@
         ]
       },
       "Action Synchronization": {
-        time: "3:00 PM - 5:00 PM",
-        prize: "₹2,000",
+        time: "2:30 PM - 3:30 PM"
         description: "Team coordination challenge where members must perform synchronized actions based on cues.",
         rules: [
           "Teams of 4-6 members",
@@ -805,16 +688,6 @@
         modal.style.display = "none";
       }
     });
-
-    // Mobile navigation toggle
-    if (window.innerWidth <= 480) {
-      const nav = document.querySelector('nav');
-      nav.addEventListener('click', function(e) {
-        if (e.target === nav || e.target === nav.querySelector('a:first-child')) {
-          nav.classList.toggle('active');
-        }
-      });
-    }
   </script>
 </body>
 </html>
